@@ -22,6 +22,6 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      run: mvn -B package --file pom.xml -Ddocker.username="$DOCKER_USERNAME" -Ddocker.password="$DOCKER_PASSWORD"
+        docker.username: ${{ secrets.DOCKER_USERNAME }}
+        docker.password: ${{ secrets.DOCKER_PASSWORD }}
+      run: mvn -B package --file pom.xml -Ddocker.username=${{ secrets.DOCKER_USERNAME }} -Ddocker.password=${{ secrets.DOCKER_PASSWORD }}
