@@ -11,6 +11,7 @@ on:
 
 jobs:
   build:
+    name: Maven Build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -48,7 +49,7 @@ jobs:
 
         
   docker:
-    name: Publish - Docker Hub
+    name: Publish - GitHub Registry
     runs-on: ubuntu-18.04
     needs: [build]
     env:
