@@ -54,6 +54,8 @@ jobs:
     needs: [build]
     env:
       REPO: docker.pkg.github.com/acerecedoat/prova1/app
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
     steps:
     - uses: actions/checkout@v1
     - name: Login to Docker Hub
