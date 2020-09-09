@@ -135,47 +135,6 @@
 					</dependency>
 				</dependencies>
 			</plugin>
-			<plugin>
-				<!-- https://dmp.fabric8.io/ -->
-				<groupId>io.fabric8</groupId>
-				<artifactId>docker-maven-plugin</artifactId>
-				<version>0.26.0</version>
-				<configuration>
-					<!--
-					Uncomment to use, and skip with property:
-						docker.skip=true 
-					 -->
-<!-- 					<skip>true</skip> -->
-					<images>
-						<image>
-							<!--
-							For push will be required settings server username or password, or these properties:
-								-Ddocker.username=USRNAME -Ddocker.password=SECRET 
-							 -->
-							<name>${docker.registry.url}${docker.image.name}:${project.version}</name>
-							<build>
-								<dockerFile>${project.basedir}/Dockerfile</dockerFile>
-							</build>
-						</image>
-					</images>
-					<authConfig>
-						<push>
-							<username>${env.docker_username}</username>
-							<password>${env.docker_password}</password>
-						</push>
-					</authConfig>
-				</configuration>
-				<executions>
-					<execution>
-						<id>build-image</id>
-						<phase>package</phase>
-						<goals>
-							<goal>build</goal>
-							<goal>push</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
 		</plugins>
 	</build>
 </project>
