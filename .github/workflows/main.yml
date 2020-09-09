@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     paths:
-    - '**.yml'
+    - '**.yml33'
 
 jobs:
   build:
