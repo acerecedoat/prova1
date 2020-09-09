@@ -7,8 +7,12 @@ on:
 
 jobs:
   build:
-    name: Maven Build
+    name: Maven & Docker Build
     runs-on: ubuntu-latest
+    env:
+      REPO: docker.pkg.github.com/acerecedoat/prova1/app
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 1.8
@@ -22,19 +26,6 @@ jobs:
         docker.password: ${{ secrets.DOCKER_PASSWORD }}
         docker_username: ${{ secrets.DOCKER_USERNAME }}
         docker_password: ${{ secrets.DOCKER_PASSWORD }}
-
-  docker:
-    name: Publish - GitHub Registry
-    runs-on: ubuntu-18.04
-    needs: [build]
-    env:
-      REPO: docker.pkg.github.com/acerecedoat/prova1/app
-      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-    steps:
-    - uses: actions/checkout@v1
-    - name: Check file system
-      run: ls -R ./
     - name: Login to Docker Hub
       run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} docker.pkg.github.com/acerecedoat/prova1/app
     - name: Build Docker image
