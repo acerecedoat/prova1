@@ -22,7 +22,7 @@ class ProvaController {
 	private static final Logger LOG = LoggerFactory.getLogger(ProvaController.class); 
 	
     /**
-    curl "http://localhost:8080/tst" 
+    curl http://localhost:8080/tst 
      */
     @Operation(
     	summary = "Get hello.",
