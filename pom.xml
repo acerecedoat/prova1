@@ -152,7 +152,7 @@
 							For push will be required settings server username or password, or these properties:
 								-Ddocker.username=USRNAME -Ddocker.password=SECRET 
 							 -->
-							<name>${docker.registry.url}${docker.image.name}</name>
+							<name>${docker.registry.url}${docker.image.name}:${project.version}</name>
 							<build>
 								<dockerFile>${project.basedir}/Dockerfile</dockerFile>
 							</build>
