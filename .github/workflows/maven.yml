@@ -23,7 +23,7 @@ jobs:
         java-version: 1.8
     
     - name: Build with Maven
-      run: mvn -B package --file pom.xml -Ddocker.registry=docker.pkg.github.com/acerecedoat/prova1 -Ddocker.username=$docker_username -Ddocker.password=$docker_password 
+      run: mvn -B package --file pom.xml -Ddocker2.registry2=docker.pkg.github.com/acerecedoat/prova1 -Ddocker.username=$docker_username -Ddocker.password=$docker_password 
       env:
         docker.username: ${{ secrets.DOCKER_USERNAME }}
         docker.password: ${{ secrets.DOCKER_PASSWORD }}
