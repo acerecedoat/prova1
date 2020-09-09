@@ -28,7 +28,7 @@ jobs:
         DICKERUSR: ${{ secrets.DOCKER_USERNAME }}
         
     - name: Build with Maven
-      run: mvn -B package --file pom.xml -Ddocker.username=$DICKERUSR -Ddocker.password=$DOCKERPWD
+      run: mvn -B package --file pom.xml 
       env:
-        DICKERUSR: ${{ secrets.DOCKER_USERNAME }}
-        DOCKERPWD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
