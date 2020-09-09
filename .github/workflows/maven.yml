@@ -22,13 +22,8 @@ jobs:
       with:
         java-version: 1.8
     
-    - name: Build cmd
-      run: echo $DICKERUSR 
-      env:
-        DICKERUSR: ${{ secrets.DOCKER_USERNAME }}
-        
     - name: Build with Maven
-      run: mvn -B package --file pom.xml 
+      run: mvn -B package --file pom.xml -Ddocker.username="${{ secrets.DOCKER_USERNAME }}" -Ddocker.password="${{ secrets.DOCKER_PASSWORD }}"  
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}

@@ -158,10 +158,6 @@
 							</build>
 						</image>
 					</images>
-					<authConfig>
-				      <username>${env.DOCKER_USERNAME}</username>
-				      <password>${env.DOCKER_PASSWORD}</password>
-				    </authConfig>
 				</configuration>
 				<executions>
 					<execution>
