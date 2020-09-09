@@ -135,42 +135,6 @@
 					</dependency>
 				</dependencies>
 			</plugin>
-			<!-- direct usage: 
-				mvn clean com.github.jeluard:plantuml-maven-plugin:generate -DGRAPHVIZ_DOT=PATH_DOT_BIN\dot.exe
-				https://github.com/jeluard/maven-plantuml-plugin
-				
-				mvn clean com.github.jeluard:plantuml-maven-plugin:generate -DGRAPHVIZ_DOT=PATH_DOT_BIN\dot.exe
-			 -->
-			<plugin>
-				<groupId>com.github.jeluard</groupId>
-				<artifactId>plantuml-maven-plugin</artifactId>
-				<version>7954</version>
-				<configuration>
-					<outputDirectory>${basedir}/src/plantuml/images</outputDirectory>
-					<sourceFiles>
-						<directory>${basedir}/src/plantuml/specs</directory>
-						<includes>
-							<include>**/*.txt</include>
-						</includes>
-					</sourceFiles>
-				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>net.sourceforge.plantuml</groupId>
-						<artifactId>plantuml</artifactId>
-						<version>7976</version>
-					</dependency>
-				</dependencies>
-				<executions>
-					<execution>
-						<id>generate-uml</id>
-						<phase>package</phase>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
 			<plugin>
 				<!-- https://dmp.fabric8.io/ -->
 				<groupId>io.fabric8</groupId>
@@ -181,7 +145,7 @@
 					Uncomment to use, and skip with property:
 						docker.skip=true 
 					 -->
-<!-- 				<skip>true</skip> -->
+					<skip>true</skip>
 					<images>
 						<image>
 							<!--
