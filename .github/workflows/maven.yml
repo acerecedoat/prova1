@@ -23,7 +23,7 @@ jobs:
         java-version: 1.8
     
     - name: Build with Maven
-      run: mvn -X -B package --file pom.xml docker.skip=true  
+      run: mvn -B package --file pom.xml -Ddocker.skip=true  
 
     - name: Login to DockerHub
       uses: docker/login-action@v1
