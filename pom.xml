@@ -170,6 +170,7 @@
 						<id>build-image</id>
 						<phase>package</phase>
 						<goals>
+							<goal>pull</goal>
 							<goal>build</goal>
 							<goal>push</goal>
 						</goals>
