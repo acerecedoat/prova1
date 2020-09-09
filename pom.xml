@@ -10,8 +10,8 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<spring.boot.version>2.3.0.RELEASE</spring.boot.version>
-		<docker.image.name>santander/alm-automation-billing</docker.image.name>
-		<docker.registry.url>docker.santander.com:5000/</docker.registry.url>
+		<docker.image.name>prova1/alm-automation-billing</docker.image.name>
+		<docker.registry.url>docker.pkg.github.com/acerecedoat/</docker.registry.url>
 	</properties>
 
 	<dependencyManagement>
@@ -145,7 +145,7 @@
 					Uncomment to use, and skip with property:
 						docker.skip=true 
 					 -->
-					<skip>true</skip>
+<!-- 					<skip>true</skip> -->
 					<images>
 						<image>
 							<!--
@@ -165,7 +165,7 @@
 						<phase>package</phase>
 						<goals>
 							<goal>build</goal>
-<!-- 						<goal>push</goal> -->
+							<goal>push</goal>
 						</goals>
 					</execution>
 				</executions>
