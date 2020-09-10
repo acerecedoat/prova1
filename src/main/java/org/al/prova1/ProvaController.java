@@ -23,7 +23,7 @@ class ProvaController {
 	private static final Logger LOG = LoggerFactory.getLogger(ProvaController.class); 
 	
 	@Autowired
-	MongoDao mongoDao;
+	DatabaseDao mongoDao;
 	
     /**
     curl http://localhost:8080/tst 

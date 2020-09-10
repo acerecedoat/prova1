@@ -1,18 +1,33 @@
 package org.al.prova1;
 
-import org.bson.Document;
+import java.util.List;
+
+import org.dizitart.no2.Nitrite;
+import org.dizitart.no2.objects.ObjectRepository;
+import org.dizitart.no2.objects.filters.ObjectFilters;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Component;
 
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.model.Filters;
 
 @Component
-public class MongoDao {
+public class DatabaseDao {
 
 	@Autowired
-	MongoTemplate mongoTemplate;
+	Nitrite db;
+	
+	public static class GithubRow {
+		String month;
+		Double value;
+		public GithubRow () {}
+		public GithubRow (String month, Double value) {
+			this.month = month;
+			this.value = value;
+		}
+		@Override
+		public String toString() {
+			return getClass().getSimpleName()+"[month:"+month+", value:"+value+"]";
+		}
+	}
 	
 	public String doTest () {
 		String msg = "";
@@ -46,31 +61,31 @@ public class MongoDao {
 //	    	    System.out.println(cursor.next());
 //	    	}
 			
-			MongoCollection<Document> collection = mongoTemplate.getCollection("githubcsv");
-			System.out.println("1: "+collection);
-			msg += "<br/>"+collection;
+			ObjectRepository<GithubRow> repository = db.getRepository(GithubRow.class);
 			
-			mongoTemplate.createCollection("githubcsv");
-			System.out.println("2: created");
-			msg += "<br/>created";
+//			NitriteCollection collection = db.getCollection("githubcsv");
+//			System.out.println("1: "+collection);
+//			msg += "<br/>"+collection;
+//			
+//			collection = db.getCollection("githubcsv");
+//			System.out.println("3: get");
+//			msg += "<br/>get";
 			
-			collection = mongoTemplate.getCollection("githubcsv");
-			System.out.println("3: get");
-			msg += "<br/>get";
-			
-	    	Document document = new Document();
-	    	document.put("name", "Shubham");
-	    	document.put("company", "Baeldung");
-	    	collection.insertOne(document);
-	    	System.out.println("4: inserted");
+	    	repository.insert(new GithubRow("2020-07", 0.8));
+	    	System.out.println("inserted");
 	    	msg += "<br/>inserted";
 	    	
 //	    	collection.find(Filters.eq("", ""), );
-	    	for (Document doc : collection.find() ) {
-	    		
-	    		msg += "<br/>doc: "+doc;
-	    	}
+//	    	for (Document doc : collection.find() ) {
+//	    		msg += "<br/>doc: "+doc;
+//	    	}
 	    	
+	    	List<GithubRow> list = repository.find(ObjectFilters.eq("month", "2020-07")).toList();
+	    	for (GithubRow row : list) {
+	    		System.out.println("row: "+row);
+	    		msg += "<br/>"+row;
+	    	}
+
 		} 
 		catch (Exception ex) {
 			ex.printStackTrace();
