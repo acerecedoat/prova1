@@ -47,10 +47,8 @@ public class DatabaseDao {
 //	    	}
 	    	
 
-	    	db.getCollection("github_co").insert(Document.createDocument("firstName", "John")
-	    		     .put("lastName", "Doe")
-	    		     .put("birthDay", new Date())
-	    		     .put("data", new byte[] {1, 2, 3}));
+	    	db.getCollection("github_co").insert(Document.createDocument("month", "2020-07").put("value", 0.7));
+	    	db.getCollection("github_co").insert(Document.createDocument("month", "2020-08").put("value", 0.8));
 	    	
 	    	
 	    	List<Document> docs = db.getCollection("github_co").find().toList();
