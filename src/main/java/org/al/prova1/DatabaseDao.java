@@ -45,11 +45,10 @@ public class DatabaseDao {
 //	    		System.out.println("row: "+row);
 //	    		msg += "<br/>"+row;
 //	    	}
-	    	
 
 	    	db.getCollection("github_co").insert(Document.createDocument("month", "2020-07").put("value", 0.7));
 	    	db.getCollection("github_co").insert(Document.createDocument("month", "2020-08").put("value", 0.8));
-	    	
+	    	db.getCollection("github_co").insert(Document.createDocument("month", "2020-09").put("value", 0.9));
 	    	
 	    	List<Document> docs = db.getCollection("github_co").find().toList();
 	    	for (Document doc : docs) {
