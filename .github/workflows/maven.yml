@@ -10,7 +10,7 @@ jobs:
     name: Maven & Docker Build
     runs-on: ubuntu-latest
     env:
-      REPO: docker.pkg.github.com/acerecedoat/prova1/alm-automation-billing
+      REPO: docker.pkg.github.com/ALM-Multicloud-Assets/alm-automation-billing/alm-automation-billing
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       
@@ -23,7 +23,7 @@ jobs:
         java-version: 1.8
         
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn -B package --file pom.xml -Ddocker.skip=true
         
     - name: Login to Docker Hub
       run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} $REPO
