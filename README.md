@@ -61,7 +61,7 @@ adsada
 
 ## How to run in localhost and test application
 
-1- Run docker image setting git hub user id as authorized user to login: [go](#run-dockeriimage).
+1- Run docker image setting git hub user id as authorized user to login: [go](#run-docker-image).
 
 
 ## Urls
