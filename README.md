@@ -10,7 +10,7 @@ Docker image build is integrated into maven build process:
 
 > mvn clean package -Ddocker.skip=false -Ddocker.santander.com:5000/ -Ddocker.username=USRNAME -Ddocker.password=SECRET
 
-## Run Docker Iimage
+## Run Docker Image
 
 > docker run -d --name santander-billing -p 8080:8080 -e STORAGE_FOLDER=/tmp/alm-billing docker.santander.com:5000/santander/alm-automation-billing
 
