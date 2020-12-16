@@ -3,6 +3,9 @@ httpProxy: http://proxyapps.gsnet.corp:80
 httpsProxy: http://proxyapps.gsnet.corp:80
 maven-exec: true
 
+git-url: "https://github.com/santander-group-global-products/convergence-poc-tekton"
+revision: development
+
 proxy:
   optional:
     proxy_port: 80
