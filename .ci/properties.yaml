@@ -1,10 +1,13 @@
+
+httpProxy: http://proxyapps.gsnet.corp:80
+httpsProxy: http://proxyapps.gsnet.corp:80
+maven-exec: true
+
 proxy:
   optional:
     proxy_port: 80
     proxy_host: proxyapps.gsnet.corp
     proxy_protocol: https
-
-httpsProxy: http://proxyapps.gsnet.corp:80
 
 maven:
   optional:
