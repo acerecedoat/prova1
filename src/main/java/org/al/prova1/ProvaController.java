@@ -26,7 +26,7 @@ class ProvaController {
 	DatabaseDao mongoDao;
 	
     /**
-    curl http://localhost:8080/tst 
+     * curl http://localhost:8080/tst 
      */
     @Operation(
     	summary = "Get hello.",
