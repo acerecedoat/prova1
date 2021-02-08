@@ -6,6 +6,8 @@ Docker image build is integrated into github actions (see __.github/workflows/ma
 
 > docker build -t $REPO:latest -t $REPO:${GITHUB_SHA::8} .
 
+# a 
+
 ## Run docker image
 
 > docker run -d --name santander-billing -p 8080:8080 -e STORAGE_FOLDER=/tmp/alm-billing docker.santander.com:5000/santander/alm-automation-billing
