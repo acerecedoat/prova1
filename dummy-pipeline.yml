@@ -4,6 +4,8 @@ proxy:
     proxy_host: proxyapps.gsnet.corp
     proxy_protocol: https
 
+message: hi dummy
+
 maven:
   optional:
     maven_image: 'registry.boae.paas.gsnetcloud.corp/serenity-alm-w/mvn'
