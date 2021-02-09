@@ -7,7 +7,6 @@ Docker image build is integrated into github actions (see __.github/workflows/ma
 > docker build -t $REPO:latest -t $REPO:${GITHUB_SHA::8} .
 
 
-asdasd a
 
 ## Run docker image
 
