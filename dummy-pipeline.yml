@@ -11,7 +11,7 @@ maven:
     maven_image: 'registry.boae.paas.gsnetcloud.corp/serenity-alm-w/mvn'
     goals: 'clean package'
 
-extra: 'yeyeye'
+extra: 'one value'
 
 extra2:
   elist:
